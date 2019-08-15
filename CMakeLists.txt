@@ -13,4 +13,5 @@ set(CMAKE_CXX_FLAGS_RELEASE "-O2")
 
 include_directories(src)
 
-add_executable(test test.cpp)
+add_executable(test study/hello_world.cpp)
+add_executable(chapter1 study/ATC_1.cpp)
