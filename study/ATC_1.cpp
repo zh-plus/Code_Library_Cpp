@@ -8,7 +8,7 @@
 
 using namespace std;
 
-#define BOOST_IO ios_base::sync_with_stdio(false); cin.tie(0)
+#define BOOST_IO ios_base::sync_with_stdio(false); cin.tie(nullptr)
 #define st first
 #define nd second
 
@@ -81,6 +81,8 @@ int main() {
 
     int in = 0b11;
     cout << in << endl;
+
+    abcc = 10;
 
 
     return 0;
