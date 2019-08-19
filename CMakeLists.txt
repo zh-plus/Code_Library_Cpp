@@ -15,7 +15,9 @@ include_directories(src)
 
 add_executable(chapter1 study/ATC_1.cpp)
 add_executable(chapter2 study/ATC_2.cpp)
-add_executable(A Codeforces/Round580_div2/A.cpp)
-add_executable(B Codeforces/Round580_div2/B.cpp)
-add_executable(C Codeforces/Round580_div2/C.cpp)
-add_executable(D Codeforces/Round580_div2/D.cpp)
+#add_executable(A Codeforces/Round580_div2/A.cpp)
+#add_executable(B Codeforces/Round580_div2/B.cpp)
+#add_executable(C Codeforces/Round580_div2/C.cpp)
+#add_executable(D Codeforces/Round580_div2/D.cpp)
+
+add_executable(leetcode LeetCode/medium/SortColors.cpp)
