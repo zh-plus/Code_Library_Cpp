@@ -11,13 +11,13 @@ set(CMAKE_CXX_FLAGS "-Wall -Wextra")
 set(CMAKE_CXX_FLAGS_DEBUG "-g")
 set(CMAKE_CXX_FLAGS_RELEASE "-O2")
 
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
+
 include_directories(src)
 
-add_executable(chapter1 study/ATC_1.cpp)
-add_executable(chapter2 study/ATC_2.cpp)
-#add_executable(A Codeforces/Round580_div2/A.cpp)
-#add_executable(B Codeforces/Round580_div2/B.cpp)
-#add_executable(C Codeforces/Round580_div2/C.cpp)
-#add_executable(D Codeforces/Round580_div2/D.cpp)
+add_executable(study study/ATC_3.cpp)
 
 add_executable(leetcode LeetCode/medium/SortColors.cpp)
+
+add_executable(A Codeforces/Round581_div2/A.cpp)
+add_executable(solving Codeforces/Round581_div2/solving.cpp)
