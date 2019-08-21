@@ -17,7 +17,7 @@ include_directories(src)
 
 add_executable(study study/ATC_3.cpp)
 
-add_executable(leetcode LeetCode/medium/SortColors.cpp)
+add_executable(medium LeetCode/medium/SetMatrxZeroes.cpp)
 
 add_executable(A Codeforces/Round581_div2/A.cpp)
 add_executable(solving Codeforces/Round581_div2/solving.cpp)
