@@ -17,7 +17,18 @@ using namespace std;
 
 class Solution {
 public:
-    inline ll combination(int b, int s){
+    /**
+     * In big number condition, using C(b, s) = (b - s + 1) * C(b, s - 1) / s to prevent long long out of range.
+     */
+    ll combination(int b, int s){
+        if (s > b / 2) {
+            s = b - s;
+        }
+
+        if (s > 3) {
+            return (b - s + 1) * combination(b, s - 1) / s;
+        }
+
         ll factor = 1;
         for (int i = 0; i < s; ++i) {
             factor *= b--;
