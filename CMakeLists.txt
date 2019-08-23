@@ -17,7 +17,7 @@ include_directories(src)
 
 add_executable(study study/ATC_3.cpp)
 
-add_executable(medium LeetCode/medium/UniquePaths.cpp)
+add_executable(medium LeetCode/medium/MergeIntervals.cpp)
 
 add_executable(A Codeforces/EducationalRound71_div2/A.cpp)
 add_executable(solving Codeforces/EducationalRound71_div2/solving.cpp)
