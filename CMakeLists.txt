@@ -19,5 +19,5 @@ add_executable(study study/ATC_4.cpp)
 
 add_executable(medium LeetCode/medium/JumpGame.cpp)
 
-add_executable(A Codeforces/EducationalRound71_div2/A.cpp)
-add_executable(solving Codeforces/EducationalRound71_div2/solving.cpp)
+add_executable(A Codeforces/Manthan_Codefest19/A.cpp)
+add_executable(solving Codeforces/Manthan_Codefest19/solving.cpp)
