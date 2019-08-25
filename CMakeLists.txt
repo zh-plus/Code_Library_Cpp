@@ -15,10 +15,9 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
 
 include_directories(src)
 
-add_executable(study study/ATC_3.cpp)
+add_executable(study study/ATC_4.cpp)
 
-add_executable(easy LeetCode/easy/PlusOne.cpp)
-add_executable(medium LeetCode/medium/MergeIntervals.cpp)
+add_executable(medium LeetCode/medium/JumpGame.cpp)
 
 add_executable(A Codeforces/EducationalRound71_div2/A.cpp)
 add_executable(solving Codeforces/EducationalRound71_div2/solving.cpp)
