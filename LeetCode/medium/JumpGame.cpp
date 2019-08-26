@@ -16,7 +16,18 @@ public:
     bool *cant;
 
     bool canJump(vector<int> &nums){
+        int i = 0, max_num = nums[0];
+        int last = nums.size() - 1;
+        while (i <= max_num) {
+            max_num = max(i + nums[i], max_num);
+            if (i == last) {
+                return true;
+            }
 
+            i++;
+        }
+
+        return false;
     }
 
     bool canJump1(vector<int> &nums) {
