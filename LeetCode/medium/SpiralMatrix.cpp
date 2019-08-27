@@ -29,14 +29,14 @@ public:
 
         if (up != down) {
             //lower
-            for (int j = r - 1; j >= 0; --j) {
+            for (int j = r - 1; j >= l; --j) {
                 result.push_back(matrix[down][j]);
             }
         }
 
         if (l != r) {
             //left
-            for (int i = down - 1; i >= 1; --i) {
+            for (int i = down - 1; i > up; --i) {
                 result.push_back(matrix[i][l]);
             }
         }
@@ -45,7 +45,7 @@ public:
         r--;
         down--;
         up++;
-        if (l <= r && down <= up) {
+        if (l <= r && up <= down) {
             recursive(matrix, l, r, up, down);
         }
     }
