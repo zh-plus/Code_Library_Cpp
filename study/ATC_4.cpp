@@ -38,7 +38,7 @@ public:
 int main() {
     BOOST_IO;
 
-    vector<int> v;
+    vector<int> v = vector<int>();
     complex<int> c;
     
 
