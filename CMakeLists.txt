@@ -18,6 +18,7 @@ include_directories(src)
 add_executable(study study/ATC_4.cpp)
 
 add_executable(medium LeetCode/medium/GroupAnagrams.cpp)
+add_executable(easy LeetCode/easy/MaximumSubarray.cpp)
 
 add_executable(A Codeforces/Manthan_Codefest19/A.cpp)
 add_executable(solving Codeforces/Manthan_Codefest19/solving.cpp)

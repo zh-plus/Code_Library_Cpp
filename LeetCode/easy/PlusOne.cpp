@@ -6,10 +6,8 @@
 #include <iostream>
 #include <fstream>
 
-
 #define BOOST_IO ios_base::sync_with_stdio(false); cin.tie(nullptr); cout.tie(nullptr);
 #define LOCAL
-
 
 using namespace std;
 
