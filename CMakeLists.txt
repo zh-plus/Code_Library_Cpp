@@ -17,8 +17,10 @@ include_directories(src)
 
 add_executable(study study/ATC_4.cpp)
 
-add_executable(medium LeetCode/medium/34_FindFirstAndLastPositionOfElementInSortedArray.cpp)
 add_executable(easy LeetCode/easy/MaximumSubarray.cpp)
+add_executable(medium LeetCode/medium/34_FindFirstAndLastPositionOfElementInSortedArray.cpp)
+add_executable(hard LeetCode/hard/44_WildcardMatching.cpp)
+
 
 add_executable(C Codeforces/Round582_div3/C.cpp)
 add_executable(solving Codeforces/Round582_div3/solving.cpp)
