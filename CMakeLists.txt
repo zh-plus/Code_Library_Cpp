@@ -18,7 +18,7 @@ include_directories(src)
 add_executable(study study/ATC_4.cpp)
 
 add_executable(easy LeetCode/easy/53_MaximumSubarray.cpp)
-add_executable(medium LeetCode/medium/1155_NumberOfDiceRollsWithTargetSum.cpp)
+add_executable(medium LeetCode/medium/1145_BinaryTreeColoringGame.cpp)
 add_executable(hard LeetCode/hard/44_WildcardMatching.cpp)
 
 
