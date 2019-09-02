@@ -13,29 +13,29 @@
 
 using namespace std;
 
-class TreeNode{
+class TreeNode {
 public:
 
     vector<TreeNode> children;
     int value;
     TreeNode *parent;
 
-    explicit TreeNode(): children{}, value{0}, parent{} {};
+    explicit TreeNode() : children{}, value{0}, parent{} {};
 
     explicit TreeNode(int v) : children{}, value{v}, parent{} {};
 
-    void add_child(TreeNode &child){
+    void add_child(TreeNode &child) {
         children.push_back(child);
         child.parent = this;
     }
 };
 
-class Tree{
+class Tree {
 public:
     vector<TreeNode> nodes;
     vector<vector<int>> levels;
 
-    explicit Tree(int n){
+    explicit Tree(int n) {
         nodes.resize(n + 1);
         for (int i = 1; i <= n; ++i) {
             nodes[i] = TreeNode(i);
@@ -47,11 +47,11 @@ public:
         }
     }
 
-    void choose_parent(int child, int parent){
+    void choose_parent(int child, int parent) {
         nodes[parent].add_child(nodes[child]);
     }
 
-    TreeNode get_root(){
+    TreeNode get_root() {
         TreeNode root = nodes[1];
         while (root.parent) {
             root = *root.parent;
@@ -60,24 +60,24 @@ public:
         return root;
     }
 
-    void cal_levels(){
+    void cal_levels() {
         TreeNode root = get_root();
         levels[0].push_back(root.value);
-        for (const TreeNode& c: root.children) {
+        for (const TreeNode &c: root.children) {
             dfs(c, 1);
         }
     }
 
-    void dfs(const TreeNode& node, int level_num) {
+    void dfs(const TreeNode &node, int level_num) {
         levels[level_num].push_back(node.value);
         int next_level = level_num + 1;
-        for (const TreeNode& c: node.children) {
+        for (const TreeNode &c: node.children) {
             dfs(c, next_level);
         }
     }
 
     int get_level(int num) {
-        for (int i = 0; i < (int)levels.size(); ++i) {
+        for (int i = 0; i < (int) levels.size(); ++i) {
             for (int value: levels[i]) {
                 if (value == num) {
                     return i;

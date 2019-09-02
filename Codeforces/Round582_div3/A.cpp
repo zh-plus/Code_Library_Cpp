@@ -14,13 +14,13 @@
 
 using namespace std;
 
-int solve(int n, const vector<int>& nums){
+int solve(int n, const vector<int> &nums) {
     int odd = 0, even = 0;
     for (int num: nums) {
         if (num % 2) {
-            odd ++;
+            odd++;
         } else {
-            even ++;
+            even++;
         }
     }
 

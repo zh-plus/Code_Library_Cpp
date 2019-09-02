@@ -46,16 +46,15 @@ ll find_min_op(vector<int> exps, int i, int k) {
         total += last * (j - i + 1);
         j++;
     }
-    j --;
+    j--;
 
-    if(int diff = same - k; diff > 0) {
+    if (int diff = same - k; diff > 0) {
         int extra = diff * (j - i + 1);
         total -= extra;
     }
 
     return total;
 }
-
 
 
 ll solve(ll n, ll k, const vector<int> &nums) {
@@ -80,7 +79,7 @@ ll solve(ll n, ll k, const vector<int> &nums) {
     int post_sum = 0;
     for (; last >= 0; --last) {
         if (post_sum >= k) {
-            last ++;
+            last++;
             break;
         }
 

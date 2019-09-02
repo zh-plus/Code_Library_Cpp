@@ -19,6 +19,6 @@ int main() {
     return 0;
 }
 
-void print(const string& s){
+void print(const string &s) {
     cout << s << endl;
 }

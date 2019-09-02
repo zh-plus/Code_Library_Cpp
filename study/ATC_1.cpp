@@ -18,14 +18,12 @@ constexpr double square(double x) {
     return x * x;
 }
 
-void change_to_1(vector<int>* v)
-{
-    for (auto& x: *v)
+void change_to_1(vector<int> *v) {
+    for (auto &x: *v)
         x = 1;
 }
 
-int count_x(const char* p, char x)
-{
+int count_x(const char *p, char x) {
     if (p == nullptr)
         return 0;
 
@@ -48,11 +46,10 @@ int main() {
 
     cout << d << endl;
 
-    vector<int> v {1, 2, 3, 4, 5};
+    vector<int> v{1, 2, 3, 4, 5};
     change_to_1(&v);
 
-    if (auto n = v.size())
-    {
+    if (auto n = v.size()) {
         cout << n << "  " << "True" << endl;
     } else {
         cout << n << "  " << "False" << endl;
@@ -68,7 +65,7 @@ int main() {
 //    pair<int, int> p = make_pair(1, 2);
 //    cout << p.st << "  " << p.nd << endl;
 
-    int* p = &v[0];
+    int *p = &v[0];
     cout << p << endl;
 
     int x = 2, y = 3;

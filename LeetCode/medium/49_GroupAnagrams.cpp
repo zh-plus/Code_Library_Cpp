@@ -42,7 +42,7 @@ public:
     }
 };
 
-static auto const magic = [](){ BOOST_IO };
+static auto const magic = []() { BOOST_IO };
 
 int main() {
     BOOST_IO;

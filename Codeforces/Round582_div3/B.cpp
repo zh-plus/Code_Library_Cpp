@@ -14,12 +14,12 @@
 
 using namespace std;
 
-int solve(int n, const vector<int>& nums){
+int solve(int n, const vector<int> &nums) {
     int count = 0;
     int min = nums.back();
     for (int i = nums.size() - 2; i >= 0; --i) {
         if (nums[i] > min) {
-            count ++;
+            count++;
         } else if (nums[i] < min) {
             min = nums[i];
         }

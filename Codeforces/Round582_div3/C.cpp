@@ -16,7 +16,7 @@ typedef long long ll;
 
 using namespace std;
 
-ll solve(ll n, ll m){
+ll solve(ll n, ll m) {
     ll mod = 0;
     for (ll j = 0; j <= m * 10; j += m) {
         mod += (j % 10);

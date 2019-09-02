@@ -15,7 +15,7 @@ class Solution {
 public:
     bool *cant;
 
-    bool canJump(vector<int> &nums){
+    bool canJump(vector<int> &nums) {
         int i = 0, max_num = nums[0];
         int last = nums.size() - 1;
         while (i <= max_num) {
@@ -47,7 +47,7 @@ public:
             return true;
         }
 
-        for (int i = min((int)nums.size() - 1 - start, nums[start]); i > 0; --i) {
+        for (int i = min((int) nums.size() - 1 - start, nums[start]); i > 0; --i) {
             if (cant[start + i])
                 continue;
 

@@ -20,7 +20,7 @@ public:
     /**
      * In big number condition, using C(b, s) = (b - s + 1) * C(b, s - 1) / s to prevent long long out of range.
      */
-    ll combination(int b, int s){
+    ll combination(int b, int s) {
         if (s > b / 2) {
             s = b - s;
         }

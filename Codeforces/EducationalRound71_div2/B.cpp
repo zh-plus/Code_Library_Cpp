@@ -16,7 +16,7 @@ inline int filter(int **&A, int i, int j) {
     return A[i][j] + A[i][j + 1] + A[i + 1][j] + A[i + 1][j + 1];
 }
 
-inline void fill(int **&A, int i, int j){
+inline void fill(int **&A, int i, int j) {
     A[i][j] = 1;
     A[i][j + 1] = 1;
     A[i + 1][j] = 1;
@@ -28,7 +28,7 @@ void solve(int n, int m, int **A) {
 
     //pack
     for (int i = 0; i < n - 1; ++i) {
-        for (int j = 0; j < m -1; ++j) {
+        for (int j = 0; j < m - 1; ++j) {
             if (filter(A, i, j) == 4) {
                 result.emplace_back(i, j);
             }

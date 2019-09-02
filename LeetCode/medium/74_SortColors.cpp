@@ -18,7 +18,7 @@ public:
         sort(nums.begin(), nums.end(), [](auto x, auto y) { return y - x > 0; });
     }
 
-    void sortColors(vector<int> &nums){
+    void sortColors(vector<int> &nums) {
         vector<int> sorted_nums(nums.size());
         int p = 0, q = nums.size() - 1;
         for (auto x: nums) {

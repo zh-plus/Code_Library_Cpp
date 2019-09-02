@@ -13,7 +13,7 @@ using namespace std;
 
 int *p;
 
-int find(int n){
+int find(int n) {
     int i = n;
     while (i != p[i]) {
         p[i] = p[p[i]];
@@ -23,7 +23,7 @@ int find(int n){
     return i;
 }
 
-void _union(int u, int v){
+void _union(int u, int v) {
     int p_u = find(u), p_v = find(v);
     if (p_u > p_v) {
         p[p_u] = p_v;
@@ -32,7 +32,7 @@ void _union(int u, int v){
     }
 }
 
-int solve(int n, int m, int k, vector<pair<int, int>> info){
+int solve(int n, int m, int k, vector<pair<int, int>> info) {
     for (auto &[u, v]:info) {
         v += n;
     }

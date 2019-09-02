@@ -33,7 +33,7 @@ public:
     }
 };
 
-static auto magic = [](){BOOST_IO};
+static auto magic = []() { BOOST_IO };
 
 int main() {
     BOOST_IO;

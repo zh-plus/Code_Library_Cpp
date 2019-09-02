@@ -82,7 +82,7 @@ int main() {
         ++value;
         cout << key << ": " << value << endl;
     }
-    
+
 
     return 0;
 }

@@ -3,9 +3,9 @@ project(Code_Library)
 
 set(CMAKE_CXX_STANDARD 17)
 
-if(NOT CMAKE_BUILD_TYPE)
+if (NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
-endif()
+endif ()
 
 set(CMAKE_CXX_FLAGS "-Wall -Wextra")
 set(CMAKE_CXX_FLAGS_DEBUG "-g")
@@ -17,7 +17,7 @@ include_directories(src)
 
 add_executable(study study/ATC_4.cpp)
 
-add_executable(easy LeetCode/easy/MaximumSubarray.cpp)
+add_executable(easy LeetCode/easy/53_MaximumSubarray.cpp)
 add_executable(medium LeetCode/medium/1155_NumberOfDiceRollsWithTargetSum.cpp)
 add_executable(hard LeetCode/hard/44_WildcardMatching.cpp)
 

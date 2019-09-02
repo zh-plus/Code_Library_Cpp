@@ -40,7 +40,6 @@ public:
 };
 
 
-
 int solve(int n, const vector<unsigned int> &A) {
     Graph graph(n);
 
@@ -51,8 +50,6 @@ int solve(int n, const vector<unsigned int> &A) {
             }
         }
     }
-
-
 
 
 }

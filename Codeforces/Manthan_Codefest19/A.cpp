@@ -11,7 +11,7 @@
 
 using namespace std;
 
-int solve(int a, int b, int n){
+int solve(int a, int b, int n) {
     n %= 3;
     if (n == 0) {
         return a;
