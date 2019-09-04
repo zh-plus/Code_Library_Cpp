@@ -17,7 +17,7 @@ include_directories(src)
 
 add_executable(study study/ATC_9.cpp)
 
-add_executable(easy LeetCode/easy/53_MaximumSubarray.cpp)
+add_executable(easy LeetCode/easy/1022_SumOfRootToLeafBinaryNumbers.cpp)
 add_executable(medium LeetCode/medium/1145_BinaryTreeColoringGame.cpp)
 add_executable(hard LeetCode/hard/1147_LongestChunkedPalindromeDecomposition.cpp)
 
