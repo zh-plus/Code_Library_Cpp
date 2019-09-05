@@ -15,11 +15,11 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
 
 include_directories(src)
 
-add_executable(study study/ATC_9.cpp)
+add_executable(study study/ATC_4_2.cpp)
 
 add_executable(easy LeetCode/easy/1022_SumOfRootToLeafBinaryNumbers.cpp)
 add_executable(medium LeetCode/medium/1145_BinaryTreeColoringGame.cpp)
-add_executable(hard LeetCode/hard/1147_LongestChunkedPalindromeDecomposition.cpp)
+add_executable(hard LeetCode/hard/1178_NumberOfValidWordsForEachPuzzle.cpp)
 
 
 add_executable(C Codeforces/Round583_div12/C.cpp)
