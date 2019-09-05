@@ -22,7 +22,7 @@ add_executable(medium LeetCode/medium/1145_BinaryTreeColoringGame.cpp)
 add_executable(hard LeetCode/hard/1178_NumberOfValidWordsForEachPuzzle.cpp)
 
 
-add_executable(C Codeforces/Round583_div12/C.cpp)
-add_executable(solving Codeforces/Round583_div12/solving.cpp)
+add_executable(A Codeforces/EducationalRound72_div2/A.cpp)
+add_executable(solving Codeforces/EducationalRound72_div2/solving.cpp)
 
 add_executable(interviews Interviews/ShunFeng/NumOfStudyMachine.cpp)
