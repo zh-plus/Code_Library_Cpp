@@ -18,7 +18,7 @@ include_directories(src)
 add_executable(study study/ATC_4_2.cpp)
 
 add_executable(easy LeetCode/easy/1022_SumOfRootToLeafBinaryNumbers.cpp)
-add_executable(medium LeetCode/medium/1145_BinaryTreeColoringGame.cpp)
+add_executable(medium LeetCode/medium/11_ContainerWithMostWater.cpp)
 add_executable(hard LeetCode/hard/1178_NumberOfValidWordsForEachPuzzle.cpp)
 
 

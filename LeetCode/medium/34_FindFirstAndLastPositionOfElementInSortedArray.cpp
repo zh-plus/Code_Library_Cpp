@@ -33,7 +33,11 @@ public:
     }
 };
 
-static auto magic = []() { BOOST_IO };
+ __attribute__ ((constructor))
+void myStartupFun() {
+    BOOST_IO;
+    printf("BOOST_IO done!\n");
+}
 
 int main() {
     BOOST_IO;
