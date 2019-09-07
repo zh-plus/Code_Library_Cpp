@@ -127,7 +127,6 @@ public:
  __attribute__ ((constructor))
 void myStartupFun() {
     BOOST_IO;
-    printf("BOOST_IO done!\n");
 }
 
 int main() {

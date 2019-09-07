@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.13)
 project(Code_Library)
 
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_C_STANDARD 99)
 
 if (NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
@@ -15,10 +16,11 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
 
 include_directories(src)
 
-add_executable(study study/ATC_4_2.cpp)
+add_executable(cpp_study study/ATourOfCpp/ATC_4_2.cpp)
+add_executable(c_study study/ModernC/MC_1.c)
 
 add_executable(easy LeetCode/easy/1022_SumOfRootToLeafBinaryNumbers.cpp)
-add_executable(medium LeetCode/medium/11_ContainerWithMostWater.cpp)
+add_executable(medium LeetCode/medium/1177_CanMakePalindromeFromSubstring.cpp)
 add_executable(hard LeetCode/hard/1178_NumberOfValidWordsForEachPuzzle.cpp)
 
 
