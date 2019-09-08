@@ -17,19 +17,19 @@ using namespace std;
 
 class Solution {
 public:
-    int maxSubArray(vector<int> &nums) {
-        // Kadane's Algorithm
-        int global_max = INT_MIN, max_ending_here = 0;
-        for (int &num: nums) {
-            max_ending_here += num;
-            global_max = max(global_max, max_ending_here);
-
-            if (max_ending_here < 0) {  // Change the determination position to allow negative result
-                max_ending_here = 0;
-            }
+    int distanceBetweenBusStops(vector<int> &distance, int start, int destination) {
+        vector<int> prefix_sum(distance.size() + 1, 0);
+        for (int sum = 0, i = 1, sz = distance.size(); i <= sz; ++i) {
+            sum += distance[i - 1];
+            prefix_sum[i] = sum;
         }
 
-        return global_max;
+        if (destination < start) {
+            swap(destination, start);
+        }
+        int forward = prefix_sum[destination] - prefix_sum[start];
+
+        return forward < prefix_sum.back() - forward ? forward : prefix_sum.back() - forward;
     }
 };
 
@@ -45,18 +45,18 @@ int main() {
     ALTER_IN("in.txt");
 #endif
 
-    vector<int> nums;
-    nums.reserve(100);
-
+    vector<int> distances;
+    distances.reserve(100);
     string line;
     getline(cin, line);
     istringstream ist(line);
-    int temp;
-    while (ist >> temp) {
-        nums.push_back(temp);
+    for (int num; ist >> num;) {
+        distances.push_back(num);
     }
+    int s, d;
+    cin >> s >> d;
 
-    Solution s;
-    int result = s.maxSubArray(nums);
+    Solution solution;
+    int result = solution.distanceBetweenBusStops(distances, s, d);
     cout << result;
 }
