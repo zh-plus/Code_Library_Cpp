@@ -20,7 +20,7 @@ using namespace std;
 
 int solve(int n, int d, int e) {
     int c = 5 * e;
-    
+
 
 }
 

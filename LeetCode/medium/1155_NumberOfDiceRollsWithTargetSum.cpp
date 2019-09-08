@@ -58,7 +58,7 @@ public:
     }
 };
 
- __attribute__ ((constructor))
+__attribute__ ((constructor))
 void myStartupFun() {
     BOOST_IO;
 }

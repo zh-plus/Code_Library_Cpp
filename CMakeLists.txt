@@ -19,7 +19,7 @@ include_directories(src)
 add_executable(cpp_study study/ATourOfCpp/ATC_4_2.cpp)
 add_executable(c_study study/ModernC/MC_1.c)
 
-add_executable(easy LeetCode/easy/1022_SumOfRootToLeafBinaryNumbers.cpp)
+add_executable(easy LeetCode/easy/1184_DistanceBetweenBusStops.cpp)
 add_executable(medium LeetCode/medium/1177_CanMakePalindromeFromSubstring.cpp)
 add_executable(hard LeetCode/hard/1178_NumberOfValidWordsForEachPuzzle.cpp)
 

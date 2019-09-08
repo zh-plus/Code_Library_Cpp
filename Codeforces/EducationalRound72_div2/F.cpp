@@ -16,29 +16,29 @@
 
 using namespace std;
 
-class UDG{
+class UDG {
 public:
     int V;
     vector<unordered_set<int>> edges;
     vector<vector<bool>> available;
 
-    UDG(int V): V{V}, edges(V + 1), available(V + 1, vector<bool>(V + 1, false)) {}
+    UDG(int V) : V{V}, edges(V + 1), available(V + 1, vector<bool>(V + 1, false)) {}
 
-    void add_edge(int u, int v){
+    void add_edge(int u, int v) {
         edges[u].insert(v);
         edges[v].insert(u);
 
         for (int i = 1; i < V + 1; ++i) {
             for (int j = 1; j < V + 1; ++j) {
-                if (not available[i][j]){
-                    available[i][j] =  (available[i][u] and available[v][j]) or (available[i][v] and available[u][j]);
-                    available[j][i] =  available[i][j];
+                if (not available[i][j]) {
+                    available[i][j] = (available[i][u] and available[v][j]) or (available[i][v] and available[u][j]);
+                    available[j][i] = available[i][j];
                 }
             }
         }
     }
 
-    void remove_edge(int u, int v){
+    void remove_edge(int u, int v) {
         edges[u].erase(v);
         edges[v].erase(u);
     }

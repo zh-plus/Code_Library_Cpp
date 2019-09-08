@@ -70,10 +70,10 @@ public:
         return sum;
     }
 
-    void cal_str(TreeNode *root, const string &str){
+    void cal_str(TreeNode *root, const string &str) {
         string this_str = str + (root->val == 1 ? '1' : '0');
 
-        if (root->left == nullptr && root->right == nullptr){ //leaf
+        if (root->left == nullptr && root->right == nullptr) { //leaf
             strs.push_back(this_str);
             return;
         }
@@ -86,7 +86,7 @@ public:
     }
 };
 
- __attribute__ ((constructor))
+__attribute__ ((constructor))
 void myStartupFun() {
     BOOST_IO;
 }

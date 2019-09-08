@@ -9,7 +9,7 @@
 #include <stdint-gcc.h>
 
 
-int main(){
+int main() {
     size_t sz = -1;
     long long ll;
 

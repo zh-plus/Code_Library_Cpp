@@ -81,7 +81,7 @@ public:
 
     void set_mouth(Shape *shape);
 
-    virtual void wink(int i );
+    virtual void wink(int i);
 };
 
 void Smiley::draw() const {

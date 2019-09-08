@@ -26,7 +26,7 @@ unsigned int popcount(unsigned int x) {
 
 class Solution {
 public:
-    vector<bool> canMakePaliQueries(const string& s, vector<vector<int>> &queries) {
+    vector<bool> canMakePaliQueries(const string &s, vector<vector<int>> &queries) {
         /**
          * O(q) exclusive-or approach.
          */
