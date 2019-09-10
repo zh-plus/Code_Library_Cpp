@@ -50,33 +50,35 @@ public:
         queue<int> q;
         q.push(0);
 
-        vector<int> levels(n, 0);
         bool red = true;
-        int front, this_level;
+        int front;
+        int level = 0;
         while (!q.empty()) {
-            front = q.front();
-            this_level = levels[front];
-            if (red) {
-                for (auto &x: colorDg.red_adj[front]) {
-                    if (r_visited.find(x) == r_visited.end()) {
-                        red_distance[x] = min(red_distance[x], this_level + 1);
-                        levels[x] = this_level + 1;
-                        r_visited.insert(x);
-                        q.push(x);
+            for (int sz = q.size(); sz != 0; --sz) {
+                front = q.front();
+
+                if (red) {
+                    for (auto &x: colorDg.red_adj[front]) {
+                        if (r_visited.find(x) == r_visited.end()) {
+                            red_distance[x] = min(red_distance[x], level + 1);
+                            r_visited.insert(x);
+                            q.push(x);
+                        }
+                    }
+                } else {
+                    for (auto &x: colorDg.blue_adj[front]) {
+                        if (b_visited.find(x) == b_visited.end()) {
+                            red_distance[x] = min(red_distance[x], level + 1);
+                            b_visited.insert(x);
+                            q.push(x);
+                        }
                     }
                 }
-            } else {
-                for (auto &x: colorDg.blue_adj[front]) {
-                    if (b_visited.find(x) == b_visited.end()) {
-                        red_distance[x] = min(red_distance[x], this_level + 1);
-                        levels[x] = this_level + 1;
-                        b_visited.insert(x);
-                        q.push(x);
-                    }
-                }
+
+                q.pop();
             }
 
-            q.pop();
+            level++;
             red = not red;
         }
 
@@ -87,32 +89,34 @@ public:
         q = {};
         q.push(0);
 
-        fill(levels.begin(), levels.end(), 0);
         red = false;
+        level = 0;
         while (!q.empty()) {
-            front = q.front();
-            this_level = levels[front];
-            if (red) {
-                for (auto &x: colorDg.red_adj[front]) {
-                    if (r_visited.find(x) == r_visited.end()) {
-                        blue_distance[x] = min(blue_distance[x], this_level + 1);
-                        levels[x] = this_level + 1;
-                        r_visited.insert(x);
-                        q.push(x);
+            for (int sz = q.size(); sz != 0; --sz) {
+                front = q.front();
+
+                if (red) {
+                    for (auto &x: colorDg.red_adj[front]) {
+                        if (r_visited.find(x) == r_visited.end()) {
+                            blue_distance[x] = min(blue_distance[x], level + 1);
+                            r_visited.insert(x);
+                            q.push(x);
+                        }
+                    }
+                } else {
+                    for (auto &x: colorDg.blue_adj[front]) {
+                        if (b_visited.find(x) == b_visited.end()) {
+                            blue_distance[x] = min(blue_distance[x], level + 1);
+                            b_visited.insert(x);
+                            q.push(x);
+                        }
                     }
                 }
-            } else {
-                for (auto &x: colorDg.blue_adj[front]) {
-                    if (b_visited.find(x) == b_visited.end()) {
-                        blue_distance[x] = min(blue_distance[x], this_level + 1);
-                        levels[x] = this_level + 1;
-                        b_visited.insert(x);
-                        q.push(x);
-                    }
-                }
+
+                q.pop();
             }
 
-            q.pop();
+            level++;
             red = not red;
         }
 
