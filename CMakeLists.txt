@@ -20,7 +20,7 @@ add_executable(cpp_study study/ATourOfCpp/ATC_4_2.cpp)
 add_executable(c_study study/ModernC/MC_1.c)
 
 add_executable(easy LeetCode/easy/1184_DistanceBetweenBusStops.cpp)
-add_executable(medium LeetCode/medium/1092_ShortestCommonSupersequence.cpp)
+add_executable(medium LeetCode/medium/16_3SumClosest.cpp)
 add_executable(hard LeetCode/hard/1178_NumberOfValidWordsForEachPuzzle.cpp)
 
 add_executable(STL study/CppSTL/buildin.cpp)
