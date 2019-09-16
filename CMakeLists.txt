@@ -21,7 +21,7 @@ add_executable(c_study study/ModernC/MC_1.c)
 
 add_executable(easy LeetCode/easy/21_MergeTwoSortedLists.cpp)
 add_executable(medium LeetCode/medium/16_3SumClosest.cpp)
-add_executable(hard LeetCode/hard/1178_NumberOfValidWordsForEachPuzzle.cpp)
+add_executable(hard LeetCode/hard/23_MergeKSortedLists.cpp)
 
 add_executable(STL study/CppSTL/priority_queue.cpp)
 add_executable(template template/Dijkstra.cpp)
@@ -30,3 +30,5 @@ add_executable(AB Codeforces/Round584_div12/A.cpp)
 add_executable(solving Codeforces/Round584_div12/solving.cpp)
 
 add_executable(interviews Interviews/ShunFeng/NumOfStudyMachine.cpp)
+
+add_executable(test test/gen_regex.cpp)
