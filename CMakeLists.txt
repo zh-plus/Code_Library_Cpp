@@ -20,7 +20,7 @@ add_executable(cpp_study study/ATourOfCpp/ATC_4_2.cpp)
 add_executable(c_study study/ModernC/MC_1.c)
 
 add_executable(easy LeetCode/easy/21_MergeTwoSortedLists.cpp)
-add_executable(medium LeetCode/medium/16_3SumClosest.cpp)
+add_executable(medium LeetCode/medium/63_UniquePathsII.cpp)
 add_executable(hard LeetCode/hard/23_MergeKSortedLists.cpp)
 
 add_executable(STL study/CppSTL/priority_queue.cpp)
