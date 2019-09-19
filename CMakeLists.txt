@@ -23,11 +23,11 @@ add_executable(easy LeetCode/easy/70_ClimbingStairs.cpp)
 add_executable(medium LeetCode/medium/64_MinimumPathSum.cpp)
 add_executable(hard LeetCode/hard/23_MergeKSortedLists.cpp)
 
-add_executable(STL study/CppSTL/priority_queue.cpp)
+add_executable(STL study/CppSTL/regex.cpp)
 add_executable(template template/Dijkstra.cpp)
 
-add_executable(AB Codeforces/Round584_div12/A.cpp)
-add_executable(solving Codeforces/Round584_div12/solving.cpp)
+add_executable(E Codeforces/EducationalRound73_div2/E.cpp)
+add_executable(solving Codeforces/EducationalRound73_div2/solving.cpp)
 
 add_executable(interviews Interviews/ShunFeng/NumOfStudyMachine.cpp)
 
