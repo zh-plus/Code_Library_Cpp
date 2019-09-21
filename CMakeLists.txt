@@ -20,7 +20,7 @@ add_executable(cpp_study study/ATourOfCpp/ATC_4_2.cpp)
 add_executable(c_study study/ModernC/MC_1.c)
 
 add_executable(easy LeetCode/easy/70_ClimbingStairs.cpp)
-add_executable(medium LeetCode/medium/64_MinimumPathSum.cpp)
+add_executable(medium LeetCode/medium/19_RemoveNthNodeFromEndOfList.cpp)
 add_executable(hard LeetCode/hard/23_MergeKSortedLists.cpp)
 
 add_executable(STL study/CppSTL/regex.cpp)
@@ -30,5 +30,3 @@ add_executable(E Codeforces/EducationalRound73_div2/E.cpp)
 add_executable(solving Codeforces/EducationalRound73_div2/solving.cpp)
 
 add_executable(interviews Interviews/ShunFeng/NumOfStudyMachine.cpp)
-
-add_executable(test test/gen_regex.cpp)
