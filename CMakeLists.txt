@@ -21,7 +21,7 @@ add_executable(c_study study/ModernC/MC_1.c)
 
 add_executable(easy LeetCode/easy/70_ClimbingStairs.cpp)
 add_executable(medium LeetCode/medium/72_EditDistance.cpp)
-add_executable(hard LeetCode/hard/23_MergeKSortedLists.cpp)
+add_executable(hard LeetCode/hard/85_MaximalRectangle.cpp)
 
 add_executable(STL study/CppSTL/regex.cpp)
 add_executable(template template/Dijkstra.cpp)
