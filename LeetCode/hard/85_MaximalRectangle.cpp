@@ -22,7 +22,7 @@ class Solution {
 public:
     int maximalRectangle(vector<vector<char>> &matrix) {
         /**
-         * O(n^2)
+         * O(m * n)
          */
 
         if (matrix.empty()) {
