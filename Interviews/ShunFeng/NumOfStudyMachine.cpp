@@ -11,7 +11,7 @@
 
 using namespace std;
 
-int *p;
+static int *p;
 
 int find(int n) {
     int i = n;
@@ -32,7 +32,7 @@ void _union(int u, int v) {
     }
 }
 
-int solve(int n, int m, int k, vector<pair<int, int>> info) {
+int solve(int n, int m, int k, vector<pair<int, int>> &info) {
     for (auto &[u, v]:info) {
         v += n;
     }
@@ -80,6 +80,5 @@ int main() {
         info.emplace_back(u, v);
     }
 
-    int result = solve(n, m, k, info);
-    cout << result;
+    cout << solve(n, m, k, info);
 }
