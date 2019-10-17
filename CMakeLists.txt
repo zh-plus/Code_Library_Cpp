@@ -19,8 +19,8 @@ include_directories(src)
 add_executable(cpp_study study/ATourOfCpp/ATC_4_2.cpp)
 add_executable(c_study study/ModernC/MC_1.c)
 
-add_executable(easy LeetCode/easy/67_AddBinary.cpp)
-add_executable(medium LeetCode/medium/72_EditDistance.cpp)
+add_executable(easy LeetCode/easy/112_PathSum.cpp)
+add_executable(medium LeetCode/medium/33_SearchInRotatedSortedArray.cpp)
 add_executable(hard LeetCode/hard/76_MinimumWindowSubstring.cpp)
 
 add_executable(STL study/CppSTL/gcd_lcm.cpp)
