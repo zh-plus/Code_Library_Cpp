@@ -26,7 +26,7 @@ add_executable(hard LeetCode/hard/76_MinimumWindowSubstring.cpp)
 add_executable(STL study/CppSTL/gcd_lcm.cpp)
 add_executable(template template/Dijkstra.cpp)
 
-add_executable(E Codeforces/EducationalRound73_div2/E.cpp)
-add_executable(solving Codeforces/EducationalRound73_div2/solving.cpp)
+add_executable(A Codeforces/Round595_div3/A.cpp)
+add_executable(solving Codeforces/Round595_div3/solving.cpp)
 
 add_executable(interviews Interviews/ShunFeng/NumOfStudyMachine.cpp)
