@@ -16,11 +16,11 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
 
 include_directories(src)
 
-add_executable(cpp_study study/ATourOfCpp/ATC_4_2.cpp)
+add_executable(cpp_study study/ATourOfCpp/ATC_5.cpp)
 add_executable(c_study study/ModernC/MC_1.c)
 
-add_executable(easy LeetCode/easy/112_PathSum.cpp)
-add_executable(medium LeetCode/medium/33_SearchInRotatedSortedArray.cpp)
+add_executable(easy LeetCode/easy/35_SearchInsertPosition.cpp)
+add_executable(medium LeetCode/medium/36_ValidSudoku.cpp)
 add_executable(hard LeetCode/hard/76_MinimumWindowSubstring.cpp)
 
 add_executable(STL study/CppSTL/gcd_lcm.cpp)
