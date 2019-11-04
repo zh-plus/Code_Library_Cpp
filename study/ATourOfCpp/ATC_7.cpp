@@ -10,7 +10,6 @@
 #include <complex>
 #include <algorithm>
 #include <numeric>
-#include <functional>
 
 #define BOOST_IO ios_base::sync_with_stdio(false); cin.tie(nullptr); cout.tie(nullptr);
 
@@ -120,10 +119,10 @@ void use(Container<T> &container) {
 	cout << endl;
 }
 
-template<typename T>
-void print_vector(const Vector<T> &v) {
-	for (int i = 0, sz = v.size(); i < sz; ++i) {
-		cout << v[i] << " ";
+template<typename Seq>
+void print_vector(const Seq &seq) {
+	for (int i = 0, sz = seq.size(); i < sz; ++i) {
+		cout << seq[i] << " ";
 	}
 	cout << endl;
 }
@@ -137,6 +136,18 @@ Value sum(const Sequence &s, Value value) {
 	return value;
 }
 
+//void print() {}
+
+template<typename T, typename ... Tail>
+void print(T head, Tail... tail) {
+	cout << head;
+	if constexpr(sizeof... (tail) > 0){
+		cout << ' ';
+		print(tail...);
+	}
+
+}
+
 template<typename C>
 using Value_type = typename C::value_type;
 
@@ -145,6 +156,17 @@ void algo(V &v) {
 	vector<typename V::value_type> vec;
 }
 
+template<typename ...T>
+void print(T &&... args) {
+	(cout << ... << args) << "\b";
+}
+
+template<typename Res, typename... Ts>
+vector<Res> to_vector(Ts &&... ts) {
+	vector<Res> res;
+	(res.push_back(ts), ...);
+	return res;
+}
 
 int main() {
 	BOOST_IO;
@@ -161,23 +183,25 @@ int main() {
 
 	for_each(v1.begin(), v1.end(), [](int &i) { i += 1; });
 
-	for (auto &x: v1) {
-		cout << x << " ";
-	}
-	cout << endl;
+	print_vector(v1);
+
+	cout << 1 << endl;
 
 	int value = -1;
-	auto v3 = invoke([&] {
-		return vector<int>{value};
-	});
+	auto v3 = [&] {
+		return 10;
+	}();
 
-	for (auto &x: v3) {
-		cout << x << " ";
-	}
-	cout << endl;
+	cout << 2 << endl;
+	cout << v3 << endl;
 
-	//print("first: ", 1, 2.2, "hello", "\n"s);
+	print("first: ", 1, 2.2, "hello", "\n"s);
 
+	print(1, 2, 3, 4, 5, "\n");
+
+	auto x = to_vector<double>(1, 2, 3, 4.5, 'a');
+
+	print_vector(x);
 
 	return 0;
 }

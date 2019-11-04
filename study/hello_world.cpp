@@ -13,9 +13,6 @@ int main() {
 
     cout << "Hello World!" << "123" << "end" << endl;
 
-    int i;
-    cin >> i;
-
     return 0;
 }
 

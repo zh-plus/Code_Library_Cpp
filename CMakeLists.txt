@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.13)
 project(Code_Library)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_C_STANDARD 99)
 
 if (NOT CMAKE_BUILD_TYPE)
@@ -16,7 +16,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
 
 include_directories(src)
 
-add_executable(cpp_study study/ATourOfCpp/ATC_6.cpp)
+add_executable(cpp_study study/ATourOfCpp/ATC_7.cpp)
 add_executable(my_study study/sundries/type_switch.cpp)
 add_executable(c_study study/ModernC/MC_1.c)
 
