@@ -24,7 +24,7 @@ add_executable(easy LeetCode/easy/35_SearchInsertPosition.cpp)
 add_executable(medium LeetCode/medium/36_ValidSudoku.cpp)
 add_executable(hard LeetCode/hard/76_MinimumWindowSubstring.cpp)
 
-add_executable(STL study/CppSTL/gcd_lcm.cpp)
+add_executable(STL study/CppSTL/timer.cpp)
 add_executable(template template/Dijkstra.cpp)
 
 add_executable(A Codeforces/Round595_div3/A.cpp)

@@ -40,12 +40,18 @@ public:
 		return *this;
 	}
 
+	// move-constructor
+	DumbArray(DumbArray &&other) : DumbArray() {
+		cout << "Move constructor" << endl;
+		swap(*this, other);
+	}
+
+	// swap idiom
 	friend void swap(DumbArray &first, DumbArray &second) {
 		cout << "Swap" << endl;
-		using std::swap;
 
-		swap(first.mSize, second.mSize);
-		swap(first.mArray, second.mArray);
+		std::swap(first.mSize, second.mSize);
+		std::swap(first.mArray, second.mArray);
 	}
 
 	// destructor
@@ -53,7 +59,6 @@ public:
 		delete[] mArray;
 	}
 
-private:
 	std::size_t mSize;
 	int *mArray;
 };
@@ -81,7 +86,9 @@ int main() {
 
 	DumbArray a1(2);
 	DumbArray a3(3);
-	a3 = a1;
+	a3 = std::move(a1);
+	cout << a1.mSize << endl;
+	cout << a3.mSize << endl;
 
 	return 0;
 }
