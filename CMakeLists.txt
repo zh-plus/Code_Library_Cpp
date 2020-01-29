@@ -17,7 +17,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
 include_directories(src)
 
 add_executable(cpp_study study/ATourOfCpp/ATC_7.cpp)
-add_executable(my_study study/sundries/copy_and_swap_idiom.cpp)
+add_executable(my_study study/sundries/register.cpp)
 add_executable(c_study study/ModernC/MC_1.c)
 
 add_executable(easy LeetCode/easy/35_SearchInsertPosition.cpp)
@@ -26,8 +26,9 @@ add_executable(hard LeetCode/hard/76_MinimumWindowSubstring.cpp)
 
 add_executable(STL study/CppSTL/timer.cpp)
 add_executable(template template/Dijkstra.cpp)
+add_executable(random_test test/emoji_test.cpp)
 
-add_executable(A Codeforces/Round595_div3/A.cpp)
-add_executable(solving Codeforces/Round595_div3/solving.cpp)
+add_executable(A Codeforces/EducationalRound81_div2/A.cpp)
+add_executable(solving Codeforces/EducationalRound81_div2/solving.cpp)
 
 add_executable(interviews Interviews/ShunFeng/NumOfStudyMachine.cpp)

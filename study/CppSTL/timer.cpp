@@ -46,4 +46,5 @@ int main() {
 	Timer::tic();
 	std::vector<int>(1001, 1);
 	Timer::toc();
+
 }
