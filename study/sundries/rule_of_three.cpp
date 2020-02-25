@@ -58,6 +58,7 @@ int main() {
 	Person c(b);         // And here?
 	c = c;
 
+	cout << "a:" << a.name << " -- " << "b:" << b.name << " -- " << "c:" << c.name << endl;
 	strcpy(a.name, "zhenghao");
 	cout << "a:" << a.name << " -- " << "b:" << b.name << " -- " << "c:" << c.name << endl;
 
