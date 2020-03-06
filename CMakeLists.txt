@@ -18,7 +18,7 @@ include_directories(src)
 
 add_executable(cpp_study study/ATourOfCpp/ATC_7.cpp)
 add_executable(my_study study/sundries/rule_of_three.cpp)
-add_executable(c_study study/PPPUC/io_stream.cpp)
+add_executable(c_study study/PPPUC/classes.cpp)
 
 add_executable(easy LeetCode/easy/35_SearchInsertPosition.cpp)
 add_executable(medium LeetCode/medium/36_ValidSudoku.cpp)
@@ -26,7 +26,7 @@ add_executable(hard LeetCode/hard/76_MinimumWindowSubstring.cpp)
 
 add_executable(STL study/CppSTL/timer.cpp)
 add_executable(template template/Dijkstra.cpp)
-add_executable(random_test test/emoji_test.cpp)
+add_executable(random_test test/scanf_test.cpp)
 
 add_executable(A Codeforces/EducationalRound81_div2/A.cpp)
 add_executable(solving Codeforces/EducationalRound81_div2/solving.cpp)

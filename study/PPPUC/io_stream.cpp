@@ -24,10 +24,6 @@ public:
 	}
 };
 
-void test(ios_base::openmode __mode = ios_base::in | ios_base::out){
-	cout << __mode << endl;
-}
-
 
 int main() {
 	string name = "in.txt";
@@ -66,18 +62,15 @@ int main() {
 		fs << p << endl;
 	}
 
-	test();
-
-	cin.good();
-	if (!cin) {
+	int i;
+	cin >> i;
+	if (cin.fail()) {
 		cin.clear();
-		cin.unget();
-
+		char c;
+		cin >> c;
+		cout << "Recover from fail()! " << c << endl;
 	}
 
-	if (bool(cin.rdbuf())) {
-		cin.exceptions(ist.exceptions() | ios_base::badbit);
-	}
 
 	return 0;
 }

@@ -41,10 +41,18 @@ public:
 	}
 
 	// move-constructor
-	DumbArray(DumbArray &&other) : DumbArray() {
+	DumbArray(DumbArray &&other) noexcept : DumbArray() {
 		cout << "Move constructor" << endl;
 		swap(*this, other);
 	}
+
+//	// move-assignment
+//	DumbArray &operator=(DumbArray &&other) noexcept {
+//		cout << "Move assignment" << endl;
+//		swap(*this, other);
+//
+//		return *this;
+//	}
 
 	// swap idiom
 	friend void swap(DumbArray &first, DumbArray &second) {
@@ -86,7 +94,7 @@ int main() {
 
 	DumbArray a1(2);
 	DumbArray a3(3);
-	a3 = std::move(a1);
+	a3 = move(a1);
 	cout << a1.mSize << endl;
 	cout << a3.mSize << endl;
 
