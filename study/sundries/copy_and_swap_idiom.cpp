@@ -33,9 +33,10 @@ public:
 	}
 
 	// copy-assignment
-	DumbArray &operator=(DumbArray other) {
+	DumbArray &operator=(const DumbArray &other) {
 		cout << "Copy assignment" << endl;
-		swap(*this, other);
+        DumbArray temp(other);
+		swap(*this, temp);
 
 		return *this;
 	}
@@ -46,13 +47,13 @@ public:
 		swap(*this, other);
 	}
 
-//	// move-assignment
-//	DumbArray &operator=(DumbArray &&other) noexcept {
-//		cout << "Move assignment" << endl;
-//		swap(*this, other);
-//
-//		return *this;
-//	}
+	// move-assignment
+	DumbArray &operator=(DumbArray &&other) noexcept {
+		cout << "Move assignment" << endl;
+		swap(*this, other);
+
+		return *this;
+	}
 
 	// swap idiom
 	friend void swap(DumbArray &first, DumbArray &second) {
