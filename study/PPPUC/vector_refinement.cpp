@@ -8,27 +8,55 @@
 
 using namespace std;
 
+template<typename T>
+class Allocator{
+public:
+    /**
+     * Allocate space for n objects of type T.
+     * @param n
+     * @return
+     */
+    T* allocate(int n);
+
+    /**
+     * Deallocate space for n objects of type T starting at p.
+     * @param p
+     * @param n
+     */
+    void deallocate(T *p, int n);
+
+    /**
+     * Construct a T with the value v in p.
+     * @param p
+     * @param v
+     */
+    void construct(T *p, const T &v);
+
+    void destroy(T *p);
+};
+
+template<typename T, typename A = allocator<T>>
 class Vector {
 public:
     Vector() = default;
 
-    explicit Vector(int s) : sz{static_cast<size_t>(s)}, elem{s ? new double[s] : nullptr} {
+    explicit Vector(int s) : sz{static_cast<size_t>(s)}, elem{s ? new T[s] : nullptr} {
         cout << "Size constructor!" << endl;
     }
 
-    Vector(initializer_list<double> lst) : sz{lst.size()}, elem{new double[sz]} {
+    Vector(initializer_list<T> lst) : sz{lst.size()}, elem{new T[sz]} {
         cout << "Initializer_list constructor!" << endl;
         copy(begin(lst), end(lst), elem);
     }
 
     // Copy constructor
-    Vector(const Vector &obj) : sz{obj.sz}, elem{new double[sz]}, space{obj.sz} {
+    Vector(const Vector &obj) : sz{obj.sz}, elem{new T[sz]}, space{obj.sz} {
         cout << "Copy constructor!" << endl;
         if (space >= obj.sz) {
             copy(obj.elem, obj.elem + obj.sz, elem);
             sz = obj.sz;
         } else {
-            auto *p = new double[obj.sz];
+            auto *p = new T[obj.sz];
             copy(obj.elem, obj.elem + obj.sz, p);
 
             delete[] elem;
@@ -75,15 +103,15 @@ public:
     }
 
 
-    double &operator[](int index) {
+    T &operator[](int index) {
         return elem[index];
     }
 
-    double operator[](int index) const {
+    T operator[](int index) const {
         return elem[index];
     }
 
-    double &at(int index) {
+    T &at(int index) {
         return elem[index];
     }
 
@@ -95,51 +123,73 @@ public:
         return space;
     }
 
-    void reserve(int new_space) {
+    void reserve(size_t new_space) {
         if (new_space <= space) {
             return;
         }
 
-        auto *p = new double[new_space];
-        copy(elem, elem + sz, p);
-        delete[] elem;
+        auto *p = alloc.allocate(new_space);
+        copy(elem, elem + sz, p); // for (size_t i = 0; i < sz; ++i) alloc.construct(&p[i], elem[i]);
+        for (size_t i = 0; i < sz; ++i) {
+            alloc.destroy(&elem[i]);
+        }
 
         elem = p;
         space = new_space;
     }
 
-    void resize(int new_size) {
+    void resize(size_t new_size, T val = T()) {
         reserve(new_size);
-        for (int i = sz; i < new_size; ++i) {
-            elem[i] = 0;
+        for (size_t i = sz; i < new_size; ++i) {
+            alloc.construct(&elem[i], val);
+        }
+
+        // Free surplus memory
+        for (size_t i = new_size; i < sz; ++i) {
+            alloc.destroy(&elem[i]);
         }
 
         sz = new_size;
     }
 
-    void push_back(double d) {
+    void push_back(T d) {
         if (space == 0) {
             reserve(8);
         } else if (space == sz) {
-            reserve(space << 2);
+            reserve(space << 2u);
         }
 
-        elem[sz++] = d;
+        alloc.construct(&elem[sz], d);
+        ++sz;
     }
 
 private:
     size_t sz{0};
-    double *elem{nullptr};
+    T *elem{nullptr};
     size_t space{0};
+    A alloc;
+};
+
+struct No_Default {
+    No_Default() = delete;
+
+    No_Default(int i) : value{i} {}
+
+private:
+    int value;
 };
 
 
 int main() {
-    size_t i = 5;
-    cout << (i << 1) << endl;
+    Vector<int *> v;
+    v.resize(10, new int(10));
 
-    vector<int> v;
-    v.push_back(1);
+    Vector<int *> v1;
+    v1 = v;
+
+    vector<int> v2;
+
+//    begin(v);
 
     return 0;
 }
