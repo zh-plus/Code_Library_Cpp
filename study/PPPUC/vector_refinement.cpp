@@ -9,14 +9,14 @@
 using namespace std;
 
 template<typename T>
-class Allocator{
+class Allocator {
 public:
     /**
      * Allocate space for n objects of type T.
      * @param n
      * @return
      */
-    T* allocate(int n);
+    T *allocate(int n);
 
     /**
      * Deallocate space for n objects of type T starting at p.
@@ -35,7 +35,12 @@ public:
     void destroy(T *p);
 };
 
-template<typename T, typename A = allocator<T>>
+/**
+ * As Allocator is not implemented, using std::allocator instead.
+ * @tparam T
+ * @tparam A
+ */
+template<typename T, typename A = std::allocator<T>>
 class Vector {
 public:
     Vector() = default;
@@ -112,6 +117,9 @@ public:
     }
 
     T &at(int index) {
+        if (index < 0 || index >= sz) {
+            throw out_of_range("Index not at [0, " + to_string(sz) + ")!");
+        }
         return elem[index];
     }
 
@@ -188,6 +196,7 @@ int main() {
     v1 = v;
 
     vector<int> v2;
+    v2.at(100);
 
 //    begin(v);
 
