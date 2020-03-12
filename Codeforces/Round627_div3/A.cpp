@@ -1,5 +1,5 @@
 //
-// Created by 10578 on 2019/8/30.
+// Created by 10578 on 3/12/2020.
 //
 
 #include <vector>
@@ -16,13 +16,17 @@ using namespace std;
 
 bool solve(vector<int> &nums) {
     sort(nums.begin(), nums.end());
-    for (int i = 1, sz = nums.size(); i < sz; ++i) {
-        if (nums[i] - nums[i - 1] == 1){
-            return 2;
-        }
-    }
 
-    return 1;
+    vector<int> new_nums(nums.size());
+    transform(begin(nums), end(nums), begin(new_nums), [&](int x) {
+        return x - nums.front();
+    });
+
+    bool result = all_of(begin(new_nums), end(new_nums), [](int x) {
+        return x % 2 == 0;
+    });
+
+    return result;
 }
 
 
@@ -35,16 +39,21 @@ int main() {
 
     int T;
     cin >> T;
+    vector<int> v;
+    int temp;
+    int n;
     while (T--) {
-        int n;
         cin >> n;
 
-        vector<int> A(n);
+        v.clear();
+        v.reserve(n);
+
         for (int i = 0; i < n; ++i) {
-            cin >> A[i];
+            cin >> temp;
+            v.push_back(temp);
         }
 
-        cout << solve(A) << endl;
+        cout << (solve(v) ? "YES" : "NO") << endl;
     }
 
     return 0;

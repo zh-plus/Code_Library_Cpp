@@ -1,5 +1,5 @@
 //
-// Created by 10578 on 2019/8/30.
+// Created by 10578 on 3/12/2020.
 //
 
 #include <vector>
@@ -7,6 +7,7 @@
 #include <fstream>
 #include <sstream>
 #include <algorithm>
+#include <set>
 
 #define BOOST_IO ios_base::sync_with_stdio(false); cin.tie(nullptr); cout.tie(nullptr);
 #define ALTER_IN(name) fstream _in(name); cin.rdbuf(_in.rdbuf());
@@ -14,15 +15,20 @@
 
 using namespace std;
 
-bool solve(vector<int> &nums) {
-    sort(nums.begin(), nums.end());
-    for (int i = 1, sz = nums.size(); i < sz; ++i) {
-        if (nums[i] - nums[i - 1] == 1){
-            return 2;
+int solve(string &s) {
+    int max_L = 0;
+    int temp = 0;
+    s += '*';
+    for (auto &&c: s) {
+        if (c == 'L') {
+            temp += 1;
+        } else if (temp) {
+            max_L = max(temp, max_L);
+            temp = 0;
         }
     }
 
-    return 1;
+    return max_L + 1;
 }
 
 
@@ -33,18 +39,13 @@ int main() {
     ALTER_IN("in.txt");
 #endif
 
-    int T;
+    int T = 0;
     cin >> T;
+    string s{};
     while (T--) {
-        int n;
-        cin >> n;
+        cin >> s;
 
-        vector<int> A(n);
-        for (int i = 0; i < n; ++i) {
-            cin >> A[i];
-        }
-
-        cout << solve(A) << endl;
+        cout << solve(s) << endl;
     }
 
     return 0;
