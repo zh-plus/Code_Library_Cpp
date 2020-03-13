@@ -17,7 +17,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
 include_directories(src)
 
 add_executable(cpp_study study/ATourOfCpp/ATC_7.cpp)
-add_executable(my_study study/sundries/rule_of_three.cpp)
+add_executable(my_study study/sundries/smart_pointers.cpp)
 add_executable(c_study study/PPPUC/vector_refinement.cpp)
 
 add_executable(easy LeetCode/easy/35_SearchInsertPosition.cpp)
