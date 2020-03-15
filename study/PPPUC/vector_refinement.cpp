@@ -195,8 +195,8 @@ int main() {
     Vector<int *> v1;
     v1 = v;
 
-    vector<int> v2;
-    v2.at(100);
+    Vector<No_Default> v2;
+    v2.resize(10, No_Default(2));
 
 //    begin(v);
 

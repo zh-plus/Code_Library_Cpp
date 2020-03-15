@@ -11,5 +11,8 @@
       <file path="$PROJECT_DIR$/template" />
       <file path="$PROJECT_DIR$/test" />
     </sourceRoots>
+    <excludeRoots>
+      <file path="$PROJECT_DIR$/out" />
+    </excludeRoots>
   </component>
 </project>

@@ -10,7 +10,7 @@ endif ()
 
 set(CMAKE_CXX_FLAGS_RELEASE "-Ofast")
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/out)
 
 find_package(Boost)
 if (Boost_FOUND)
@@ -24,15 +24,10 @@ if (Qt5Widgets_FOUND)
     include_directories(${Qt5Widgets_INCLUDE_DIRS})
 endif ()
 
-add_executable(cpp_study study/ATourOfCpp/ATC_7.cpp)
-add_executable(my_study study/sundries/smart_pointers.cpp)
-add_executable(c_study study/PPPUC/vector_refinement.cpp)
 
 add_executable(easy LeetCode/easy/35_SearchInsertPosition.cpp)
 add_executable(medium LeetCode/medium/36_ValidSudoku.cpp)
 add_executable(hard LeetCode/hard/76_MinimumWindowSubstring.cpp)
-
-add_executable(STL study/CppSTL/timer.cpp)
 
 add_executable(random_test test/cin_test.cpp)
 
@@ -41,5 +36,5 @@ add_executable(solving Codeforces/Round627_div3/solving.cpp)
 
 add_executable(interviews Interviews/ShunFeng/NumOfStudyMachine.cpp)
 
+add_subdirectory(study)
 add_subdirectory(template)
-add_subdirectory(study/gui)
