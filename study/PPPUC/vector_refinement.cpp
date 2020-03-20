@@ -43,6 +43,8 @@ public:
 template<typename T, typename A = std::allocator<T>>
 class Vector {
 public:
+    using iterator = T*;
+
     Vector() = default;
 
     explicit Vector(int s) : sz{static_cast<size_t>(s)}, elem{s ? new T[s] : nullptr} {
@@ -50,6 +52,8 @@ public:
     }
 
     Vector(initializer_list<T> lst) : sz{lst.size()}, elem{new T[sz]} {
+        using std::begin, std::end;
+
         cout << "Initializer_list constructor!" << endl;
         copy(begin(lst), end(lst), elem);
     }
@@ -131,6 +135,22 @@ public:
         return space;
     }
 
+    iterator begin(){
+        return elem;
+    }
+
+    iterator end(){
+        return elem + sz;
+    }
+
+    T front(){
+        return *begin();
+    }
+
+    T back(){
+        return *(end() - 1);
+    }
+
     void reserve(size_t new_space) {
         if (new_space <= space) {
             return;
@@ -161,19 +181,48 @@ public:
     }
 
     void push_back(T d) {
-        if (space == 0) {
-            reserve(8);
-        } else if (space == sz) {
-            reserve(space << 2u);
-        }
+        reserve(space == 0 ? 8 : space << 1u);
 
         alloc.construct(&elem[sz], d);
         ++sz;
     }
 
+    iterator insert(iterator p, const T& val){
+        int index = distance(begin(), p);
+        if (sz == space) {
+            reserve(space == 0 ? 8 : space << 1u);
+        }
+
+        alloc.construct(elem + sz, back());
+
+        ++sz;
+        iterator pp = begin();
+        advance(pp, index);
+        for(auto pos = end() - 1; pos != pp; --pos){
+            *pos = *(pos - 1);
+        }
+        *(pp) = val;
+
+        return pp;
+    }
+
+    iterator erase(iterator p){
+        if (p == end()) {
+            return p;
+        }
+
+        for (auto pos = p + 1; pos != end(); ++pos) {
+            *(pos - 1) = *pos;
+        }
+        alloc.destroy(&*(end() - 1));
+        --sz;
+
+        return p;
+    }
+
 private:
     size_t sz{0};
-    T *elem{nullptr};
+    iterator elem{nullptr};
     size_t space{0};
     A alloc;
 };
@@ -181,7 +230,7 @@ private:
 struct No_Default {
     No_Default() = delete;
 
-    No_Default(int i) : value{i} {}
+    explicit No_Default(int i) : value{i} {}
 
 private:
     int value;
@@ -189,16 +238,14 @@ private:
 
 
 int main() {
-    Vector<int *> v;
-    v.resize(10, new int(10));
+    Vector<int> v{1, 2, 3, 4};
+    v.erase(begin(v));
+    v.insert(begin(v) + 1, 10);
 
-    Vector<int *> v1;
-    v1 = v;
-
-    Vector<No_Default> v2;
-    v2.resize(10, No_Default(2));
-
-//    begin(v);
+    for(auto &&x: v) {
+        cout << x << " ";
+    }
+    cout << endl;
 
     return 0;
 }
