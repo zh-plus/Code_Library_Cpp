@@ -3,9 +3,9 @@
   <component name="CMakeWorkspace" PROJECT_DIR="$PROJECT_DIR$" />
   <component name="CidrRootsConfiguration">
     <sourceRoots>
-      <file path="$PROJECT_DIR$/CodeJam" />
       <file path="$PROJECT_DIR$/Codeforces" />
       <file path="$PROJECT_DIR$/Interviews" />
+      <file path="$PROJECT_DIR$/KickStart" />
       <file path="$PROJECT_DIR$/LeetCode" />
       <file path="$PROJECT_DIR$/study" />
       <file path="$PROJECT_DIR$/template" />
