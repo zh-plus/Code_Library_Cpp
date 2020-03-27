@@ -31,10 +31,9 @@ add_executable(hard LeetCode/hard/76_MinimumWindowSubstring.cpp)
 
 add_executable(random_test test/cin_test.cpp)
 
-add_executable(A Codeforces/Round627_div3/A.cpp)
-add_executable(solving Codeforces/Round627_div3/solving.cpp)
-
 add_executable(interviews Interviews/ShunFeng/NumOfStudyMachine.cpp)
 
 add_subdirectory(study)
 add_subdirectory(template)
+add_subdirectory(KickStart)
+add_subdirectory(Codeforces)
