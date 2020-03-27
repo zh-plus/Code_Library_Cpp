@@ -18,17 +18,11 @@
 using namespace std;
 using ll = long long;
 
-double newton(int n, int k) {
-    double x0 = 0;
-    double y0 = pow(x0, 2) - x0 - 2 * k;
-    double dx;
-    double b;
+double newton(ll n, ll k) {
+    double x0 = 5;
 
-    for (int i = 0; i < 100; ++i) {
-        dx = 2 * k - 1;
-        b = y0 - dx * x0;
-        x0 = -b / dx;
-        y0 = pow(x0, 2) - x0 - 2 * k;
+    for (int i = 0; i < 25; ++i) {
+        x0 -= (pow(x0, 2) - x0 - 2 * k) / (2 * x0 - 1);
     }
 
     ll temp;
@@ -41,7 +35,7 @@ double newton(int n, int k) {
     return x0;
 }
 
-string solve(int n, int k) {
+string solve(int n, ll k) {
     double root = newton(n, k);
     ll first = floor(root);
 
@@ -76,7 +70,7 @@ int main() {
 
     int T = 0;
     cin >> T;
-    int n, k;
+    ll n, k;
     while (T--) {
         cin >> n >> k;
 
