@@ -1,1 +1,0 @@
-add_executable(KickStartA 2020RoundA/A.cpp)
