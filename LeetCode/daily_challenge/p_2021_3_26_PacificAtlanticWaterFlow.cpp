@@ -43,7 +43,7 @@ public:
             for (auto j = 0; j < n; ++j) {
                 int elem = matrix[i][j];
 
-                if (i - 1 > 0 && matrix[i - 1][j] >= elem) {
+                if (i - 1 >= 0 && matrix[i - 1][j] >= elem) {
                     adj[i][j].emplace(i - 1, j);
                 }
 
@@ -51,7 +51,7 @@ public:
                     adj[i][j].emplace(i + 1, j);
                 }
 
-                if (j - 1 > 0 && matrix[i][j - 1] >= elem) {
+                if (j - 1 >= 0 && matrix[i][j - 1] >= elem) {
                     adj[i][j].emplace(i, j - 1);
                 }
 
@@ -64,10 +64,10 @@ public:
         stack<pii> s;
 
         // pacific ocean
-        for (auto i = 0; i < n; ++i) {
+        for (auto i = 0; i < m; ++i) {
             s.emplace(i, 0);
         }
-        for (auto j = 1; j < m; ++j) {
+        for (auto j = 1; j < n; ++j) {
             s.emplace(0, j);
         }
         while (!s.empty()) {
@@ -83,10 +83,10 @@ public:
         }
 
         // atlantic ocean
-        for (auto i = 0; i < n; ++i) {
+        for (auto i = 0; i < m; ++i) {
             s.emplace(i, n - 1);
         }
-        for (auto j = 1; j < m; ++j) {
+        for (auto j = 0; j < n - 1; ++j) {
             s.emplace(m - 1, j);
         }
         while (!s.empty()) {
