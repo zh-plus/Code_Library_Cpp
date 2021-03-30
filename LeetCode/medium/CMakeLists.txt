@@ -1,0 +1,1 @@
+add_executable(medium 1807_EvaluateTheBracketPairsOfAString.cpp)
